@@ -16,4 +16,10 @@ public class BookService {
 	public List getAllBooks() {
 		return books;
 	}
+
+	public Book getBookByName(String name) {
+	
+		return books.stream().filter(t -> t.getName().equals(name))
+				.findFirst().get();
+	}
 }
